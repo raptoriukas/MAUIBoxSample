@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="http://schemas.devexpress.com/maui"
+             x:Class="MAUIBoxSample.MVVM.Views.FormPage"
+             xmlns:vm="clr-namespace:MAUIBoxSample.MVVM.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="vm:FormPageVM"
+             x:Name="Page"
+             Title="FormPage">
+    <VerticalStackLayout>
+        <Label Text="Please select the planet that you live on"/>
+
+        <!--<dxe:ComboBoxEdit
+            BorderColor="Black"
+            ItemsSource="{Binding Planets}"
+            SelectedItem="{Binding PlanetField.SelectedItem}"
+        >
+            --><!--<dxe:ComboBoxEdit.Behaviors>
+                <toolkit:EventToCommandBehavior
+                    EventName="SelectionChanged"
+                    Command="{Binding Source={x:Reference Page}, Path=BindingContext.HandleFieldCommand}" 
+                    CommandParameter="{Binding PlanetField}"
+                />
+            </dxe:ComboBoxEdit.Behaviors>--><!--
+        </dxe:ComboBoxEdit>
+
+        <dxe:TextEdit 
+            BorderColor="{Binding NameField.BorderColor}"
+            Text="{Binding NameField.SelectedItem}"
+            TextChangedCommand="{Binding HandleFieldCommand}"
+            TextChangedCommandParameter="{Binding NameField}"
+            BorderThickness="5"
+            ClearIconVisibility="Never"
+            />-->
+
+        <Entry 
+            BackgroundColor="{Binding NameField.BorderColor}"
+            Text="{Binding NameField.SelectedItem}"
+            >
+            <Entry.Behaviors>
+                <toolkit:EventToCommandBehavior
+                    x:TypeArguments="vm:Field"
+                    EventName="TextChanged"
+                    Command="{Binding Source={x:Reference Page}, Path=BindingContext.HandleFieldCommand}" 
+                    CommandParameter="{Binding NameField.BorderColor}"
+                />
+            </Entry.Behaviors>
+        </Entry>
+
+        <!--<Button
+            >
+            <Button.Behaviors>
+                <toolkit:EventToCommandBehavior
+                EventName="Clicked"
+                Command="{Binding Source={x:Reference Page}, Path=BindingContext.HandleFieldCommand}" />
+            </Button.Behaviors>
+        </Button>-->
+    </VerticalStackLayout>
+</ContentPage>
