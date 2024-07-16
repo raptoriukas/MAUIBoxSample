@@ -15,6 +15,7 @@ namespace MAUIBoxSample
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .UseDevExpress(useLocalization: false)
+                .UseMauiCommunityToolkitCamera()
                 .UseDevExpressCollectionView()
                 .UseDevExpressControls()
                 .UseDevExpressEditors()

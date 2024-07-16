@@ -12,29 +12,34 @@
         <Label Text="Please select the planet that you live on"/>
 
         <!--<dxe:ComboBoxEdit
-            BorderColor="Black"
             ItemsSource="{Binding Planets}"
             SelectedItem="{Binding PlanetField.SelectedItem}"
+            BorderThickness="10"
+            BorderColor="{Binding PlanetField.BorderColor}"
+            FocusedBorderColor="{Binding PlanetField.BorderColor}"
+            FocusedBorderThickness="10"
         >
-            --><!--<dxe:ComboBoxEdit.Behaviors>
+            <dxe:ComboBoxEdit.Behaviors>
                 <toolkit:EventToCommandBehavior
                     EventName="SelectionChanged"
                     Command="{Binding Source={x:Reference Page}, Path=BindingContext.HandleFieldCommand}" 
                     CommandParameter="{Binding PlanetField}"
                 />
-            </dxe:ComboBoxEdit.Behaviors>--><!--
+            </dxe:ComboBoxEdit.Behaviors>
         </dxe:ComboBoxEdit>
+        <Entry>
+        </Entry>-->
 
-        <dxe:TextEdit 
+        <!--<dxe:TextEdit 
             BorderColor="{Binding NameField.BorderColor}"
             Text="{Binding NameField.SelectedItem}"
             TextChangedCommand="{Binding HandleFieldCommand}"
             TextChangedCommandParameter="{Binding NameField}"
             BorderThickness="5"
             ClearIconVisibility="Never"
-            />-->
+        />-->
 
-        <Entry 
+        <!--<Entry 
             BackgroundColor="{Binding NameField.BorderColor}"
             Text="{Binding NameField.SelectedItem}"
             >
@@ -43,10 +48,10 @@
                     x:TypeArguments="vm:Field"
                     EventName="TextChanged"
                     Command="{Binding Source={x:Reference Page}, Path=BindingContext.HandleFieldCommand}" 
-                    CommandParameter="{Binding NameField.BorderColor}"
+                    CommandParameter="{Binding NameField}"
                 />
             </Entry.Behaviors>
-        </Entry>
+        </Entry>-->
 
         <!--<Button
             >

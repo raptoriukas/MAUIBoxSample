@@ -25,26 +25,24 @@ public partial class FormPageVM : ObservableObject
     private void LoadData()
     {
         NameField = new Field { InitialItem = "Venutian"};
-        PlanetField = new Field { InitialItem = "Venutian" };
+        PlanetField = new Field { InitialItem = "Mercury" };
     }
 
     [RelayCommand]
-    private void HandleField(string afield)
+    private void HandleField(object afield)
     {
-        Console.WriteLine(afield);
-
-        //var field = (Field)afield;
-        Console.WriteLine("*************************************");
-        Console.WriteLine("*************************************");
-        Console.WriteLine("*************************************");
-        Console.WriteLine("*************************************");
-        //if (field.InitialItem == field.SelectedItem)
-        //{
-        //    field.BorderColor = "#123456";
-        //}
-        //else
-        //{
-        //    field.BorderColor = "#654321";
-        //}
+        if(afield is Field field)
+        {
+            if (field.InitialItem == field.SelectedItem)
+            {
+                field.BorderColor = "#123456";
+            }
+            else
+            {
+                field.BorderColor = "#654321";
+            }
+            Console.WriteLine("*********************************");
+        }
+        
     }
 }

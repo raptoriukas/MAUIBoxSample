@@ -28,7 +28,7 @@ public partial class Field : ObservableObject
     }
 
     [ObservableProperty]
-    private string borderColor = "#123456";
+    private string borderColor;
 
     public Field()
     {
